@@ -1,75 +1,44 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
 import cx from "classnames";
-import logo from "../images/logo.svg";
+import logo from "../images/logo.jpg";
+import { useSpring, animated } from "react-spring";
 
-const StyledLink = ({ className, ...props }) => {
-  className = cx(className);
-  return (
-    <Link className={className} {...props}>
-      {props.children}
-    </Link>
-  );
-};
+import hiveIcon from '../images/icons/hiveIcon.svg';
 
-const HeaderLink = ({ className, children, ...props }) => {
-  className = cx(
-    "w-full md:w-auto py-2 md:px-1 -mb-1 text-sm font-medium uppercase hover:text-indigo-500 border-transparent border-b-4 md:hover:border-indigo-600 relative",
-    className
-  );
+const SidebarLink = ({src, icon, label, isHovered}) => {
+  const sidebarLinkSpring = useSpring({ textWidth: `${isHovered ? 1 : 0}` });
+
   return (
-    <div className="flex px-1">
-      <Link
-        className={className}
-        {...props}
-        activeClassName="md:border-indigo-600"
-      >
-        {children}
-      </Link>
-    </div>
+  <Link to={src} className="flex flex-row justify-around" activeClassName="">
+    <svg src={icon} className="h-1" style={{ fill: '#FFFFFF' }} />
+    <div style={{ opacity: sidebarLinkSpring.textWidth }} >{label}</div>
+  </Link>
   );
 };
 
 const Header = ({ className, ...props }) => {
-  let [isExpanded, toggleExpansion] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
-  className = cx("w-full shadow-md", className);
+  const sidebarSpring = useSpring({width: `${isHovered ? 15 : 5}rem`});
+
   return (
-    <div className={className} {...props}>
-      <div className="flex flex-wrap flex-row items-start md:items-center justify-between px-6 md:px-10 lg:px-24 text-indigo-700">
-        <div className="my-2">
-          <Link to="/">
-            <img className="w-3/5" alt="Figurit Homepage" src={logo} />
-          </Link>
-        </div>
-
-        <button
-          className="block relative md:hidden border border-indigo-700 my-2 px-3 py-2"
-          onClick={() => toggleExpansion(!isExpanded)}
-        >
-          <svg
-            className="fill-current h-3 w-3"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
+      <animated.div
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        className="fixed top-0 h-screen z-10 shadow-md"
+        style={sidebarSpring}
+      >
+          <div
+            className="h-1/2 flex flex-col items-center"
           >
-            <title>Menu</title>
-            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-          </svg>
-        </button>
-
-        <div
-          className={`${
-            isExpanded ? `block` : `hidden`
-          } w-full md:w-auto flex md:flex flex-col md:flex-row justify-center md:justify-end items-stretch md:items-center py-1`}
-        >
-          <HeaderLink to="/">Home</HeaderLink>
-          <HeaderLink to="/services">Services</HeaderLink>
-          <HeaderLink to="/team">Team</HeaderLink>
-          <HeaderLink to="/testimonials">Testimonials</HeaderLink>
-          <HeaderLink to="/contact">Contact</HeaderLink>
-        </div>
-      </div>
-    </div>
+            <img src={logo} className="h-16 w-16" />
+            <div className="h-1 w-4/5 bg-gray-200" /> 
+            <div className="flex flex-col left-0">
+              <SidebarLink src="/" icon={hiveIcon} label="dsadsa" isHovered={isHovered} />
+            </div>
+          </div>
+      </animated.div>
   );
 };
 

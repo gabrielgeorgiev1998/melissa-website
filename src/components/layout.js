@@ -15,7 +15,7 @@ const Layout = ({ className, headerClass, bodyClass, children, ...props }) => {
         <body className="font-sans antialiased" />
       </Helmet>
 
-      <Header className={headerClass} />
+      <Header className="z-0" />
       <div className={bodyClass}>{children}</div>
       <Footer />
     </div>
