@@ -14,6 +14,7 @@ module.exports = {
 
       black: '#000',
       white: '#fff',
+      lightbee: '#ffee50',
       bee: '#f5bb1d',
 
       gray: {
@@ -142,6 +143,7 @@ module.exports = {
       '16': '4rem',
       '20': '5rem',
       '24': '6rem',
+      '28': '7.5rem',
       '32': '8rem',
       '40': '10rem',
       '48': '12rem',
@@ -194,6 +196,9 @@ module.exports = {
     borderColor: theme => ({
       ...theme('colors'),
       default: theme('colors.gray.300', 'currentColor'),
+    }),
+    gradientColorStops: theme => ({
+      ...theme('colors'),
     }),
     borderRadius: {
       none: '0',

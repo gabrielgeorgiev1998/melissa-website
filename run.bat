@@ -1,0 +1,1 @@
+code . && gatsby develop -H 192.168.0.104 -p 8000
