@@ -9,6 +9,9 @@ import { Link, graphql } from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
+import "../css/fonts.css";
+
+
 const StyledButton = ({ className, children, ...props }) => {
   className = cx(
     "py-2 px-4 bg-indigo-700 hover:bg-indigo-600 text-base text-white font-bold uppercase rounded shadow-md hover:-translate-1",
@@ -46,10 +49,10 @@ function Index({ data }) {
         style={{ backgroundImage: `url(${home})` }}
       >
         <div className="w-4/5 md:w-3/4 lg:w-7/12 mt-20 font-serif font-hairline self-start">
-          <h1 className="text-3xl md:text-5xl text-indigo-700 leading-tight">
+          <h1 className="text-3xl md:text-5xl text-indigo-700 leading-tight lato-regular">
             Serif - Gatsby Small Business Theme.
           </h1>
-          <p className="text-base">
+          <p className="text-base lato-regular">
             Multiple content types using Markdown and JSON sources. Responsive
             design and SCSS. This is a beautiful and artfully designed starting
             theme.

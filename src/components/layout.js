@@ -7,7 +7,7 @@ import SEO from './seo'
 import "../css/style.css";
 
 const Layout = ({ className, headerClass, bodyClass, children, ...props }) => {
-  bodyClass = bodyClass || "container mx-auto pl-24 pr-4";
+  bodyClass = bodyClass || "w-full z-10 pl-16";
   return (
     <div className={className} {...props}>
       <SEO/>
@@ -15,7 +15,7 @@ const Layout = ({ className, headerClass, bodyClass, children, ...props }) => {
         <body className="font-sans antialiased" />
       </Helmet>
 
-      <Header className="z-50" />
+      <Header/>
       <div className={bodyClass}>{children}</div>
       <Footer />
     </div>

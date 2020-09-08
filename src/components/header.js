@@ -3,8 +3,8 @@ import { Link } from "gatsby";
 import cx from "classnames";
 import { useSpring, animated } from "react-spring";
 
-import logo from "../images/logo.jpg";
-import melissaText from "../images/melissa-text.jpg";
+
+import SidebarLogo from "./sidebarLogo";
 
 import tempIcon1 from '../images/icons/tempIcon1.svg';
 import tempIcon2 from '../images/icons/tempIcon2.svg';
@@ -36,42 +36,38 @@ const Header = ({ className, ...props }) => {
 
   const sidebarSpring = useSpring({from: {width: '15rem'}, to: {width: `${isHovered ? 15 : 4}rem`}});
   const closeButtonSpring = useSpring({transform: `scale(${isHovered ? 1 : 0})`, opacity: `${isHovered ? 1 : -0.5}`});
-  const logoSpinSpring = useSpring({ transform: `rotate(${isHovered ? 360 : 0}deg)`})
 
   return (
-      <animated.div
-        onMouseOver={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        className="fixed top-0 h-screen shadow-lg bg-white"
-        style={sidebarSpring}
-      >
-          <div
-            className="h-1/2 flex flex-col"
-          >
-            <div className="flex flex-col items-center">
-              <Link to="/" >
-                <div className="content-center">
-                  <animated.div className="w-auto" style={logoSpinSpring}>
-                      <img src={logo} className="h-12 m-1" />
-                  </animated.div>
-                  <img src={melissaText} className="w-16 " />
-                </div>
-              </Link>
-              <div className="h-1 w-4/5 bg-gray-200" /> 
+      <div className="fixed z-50">
+        <animated.div
+          onMouseOver={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          className="absolute top-0 h-screen shadow-lg bg-white"
+          style={sidebarSpring}
+        >
+            <div
+              className="h-1/2 flex flex-col"
+            >
+              <div className="flex flex-col items-center">
+                <Link to="/" >
+                  <SidebarLogo isHovered={isHovered} />
+                </Link>
+                <div className="h-1 w-4/5 bg-gray-200" /> 
+              </div>
+              <div className="h-12 md:g-16 lg:h-24" />
+              <div className="flex flex-col items-center justify-around"> 
+                <SidebarLink src="/" icon={tempIcon1} label="Za nas" menuIsHovered={isHovered} />
+                <SidebarLink src="/services" icon={tempIcon2} label="Za tqh" menuIsHovered={isHovered} />
+                <SidebarLink src="/contact" icon={contactIcon} label="Kontakti" menuIsHovered={isHovered} />
+              </div>
+              <div className="h-12 md:g-16 lg:h-24" />
+              <div className="h-1 w-4/5 bg-gray-200 self-center" /> 
             </div>
-            <div className="h-12 md:g-16 lg:h-24" />
-            <div className="flex flex-col items-center justify-around"> 
-              <SidebarLink src="/" icon={hiveIcon} label="Za nas" menuIsHovered={isHovered} />
-              <SidebarLink src="/services" icon={tempIcon2} label="Za tqh" menuIsHovered={isHovered} />
-              <SidebarLink src="/team" icon={contactIcon} label="Kontakti" menuIsHovered={isHovered} />
-            </div>
-            <div className="h-12 md:g-16 lg:h-24" />
-            <div className="h-1 w-4/5 bg-gray-200 self-center" /> 
-          </div>
-          <animated.div className="absolute right-0 mt-4 mr-4 cursor-pointer" style={closeButtonSpring} onClick={() => setIsHovered(false)}>
-            <img src={closeSidebarIcon} className="h-8 w-8"/> 
-          </animated.div>
-      </animated.div>
+            <animated.div className="absolute right-0 mt-4 mr-4 cursor-pointer" style={closeButtonSpring} onClick={() => setIsHovered(false)}>
+              <img src={closeSidebarIcon} className="h-8 w-8"/> 
+            </animated.div>
+        </animated.div>
+      </div>
   );
 };
 
