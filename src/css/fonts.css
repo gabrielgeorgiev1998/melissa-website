@@ -13,3 +13,19 @@
 .lato-light {
     font-family: lato-light;
 }
+
+@font-face {
+    font-family: lobster;
+    src: url(../fonts/Lobster-Regular.ttf);
+}
+.lobster {
+    font-family: lobster;
+}
+
+@font-face {
+    font-family: montserrat-reg;
+    src: url(../fonts/Montserrat-Regular.ttf);
+}
+.montserrat-reg {
+    font-family: montserrat-reg;
+}

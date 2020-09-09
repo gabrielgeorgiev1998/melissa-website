@@ -16,6 +16,7 @@ module.exports = {
       white: '#fff',
       lightbee: '#ffee50',
       bee: '#f5bb1d',
+      darkbee: '#dca30a',
 
       gray: {
         100: '#f7fafc',
