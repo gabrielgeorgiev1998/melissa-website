@@ -17,7 +17,7 @@ const NameSection = (props) => {
 
     return (
         <div className="h-72 md:h-88 lg:h-96 w-full shadow-md bg-cover bg-left bg-fixed" style={{ backgroundImage: `url(${cellGradient})`}} > 
-          <div style={{ backgroundImage: `url(${props.img})` }} className="flex flex-row h-56 md:h-72 lg:h-80 w-full bg-fixed bg-cover " >
+          <div style={{ backgroundImage: `url(${props.img})` }} className="flex flex-row h-56 md:h-72 lg:h-80 w-full bg-fixed bg-cover bg-center" >
           </div>
             <animated.div style={titleSpring} className="absolute lobster text-5xl text-white z-30">
               {props.title}

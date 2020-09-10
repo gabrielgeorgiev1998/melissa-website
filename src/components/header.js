@@ -55,7 +55,7 @@ const Header = ({ className, ...props }) => {
         <animated.div
           onMouseOver={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          className="absolute top-0 h-screen shadow-lg bg-white"
+          className="absolute top-0 shadow-lg bg-white rounded-br-4xl"
           style={sidebarSpring}
         >
             <div
@@ -75,10 +75,11 @@ const Header = ({ className, ...props }) => {
               </div>
               <div className="h-12 md:g-16 lg:h-24" />
               <div className="h-1 w-4/5 bg-gray-200 self-center" /> 
+              <animated.div className="cursor-pointer self-end mr-4 mt-4" style={closeButtonSpring} onClick={() => setIsHovered(false)}>
+                <img src={closeSidebarIcon} className="h-8 w-8"/> 
+              </animated.div>
+              <div className="h-24 md:h-32 lg:h-40" />
             </div>
-            <animated.div className="absolute right-0 mt-4 mr-4 cursor-pointer" style={closeButtonSpring} onClick={() => setIsHovered(false)}>
-              <img src={closeSidebarIcon} className="h-8 w-8"/> 
-            </animated.div>
         </animated.div>
       </div>
   );
