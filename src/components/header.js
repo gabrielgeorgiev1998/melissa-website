@@ -9,10 +9,10 @@ import SidebarLogo from "./sidebarLogo";
 import tempIcon1 from '../images/icons/tempIcon1.svg';
 import tempIcon2 from '../images/icons/tempIcon2.svg';
 import tempIcon3 from '../images/icons/tempIcon3.svg';
-import hiveIcon from '../images/icons/hiveIcon.svg';
 
 import contactIcon from '../images/icons/sideBarContactsIcon.svg';
 import honeyIcon from '../images/icons/sideBarHoneyIcon.svg';
+import hiveIcon from '../images/icons/sideBarHiveIcon.svg';
 
 import closeSidebarIcon from '../images/icons/closeSidebarIcon.svg';
 
@@ -26,16 +26,14 @@ const SidebarLink = ({src, icon, label, menuIsHovered, url}) => {
                                       opacity: `${menuIsHovered ? 1 : -0.5}`,
                                     });
   const linkSpring = useSpring({ marginLeft: `${menuIsHovered ? 2 : 0}rem` }); 
-  const underlineSpring = useSpring({ position: 'absolute', backgroundColor: '#555555', height: '0.2', width: `${menuIsHovered && isActive ? '5rem' : '0rem'}`, marginTop: '2rem'});
 
 
   return (
       <Link to={src} className="bg-white rounded-lg h-12 mb-1 lobster" style={{ pointerEvents: menuIsHovered ? 'all' : 'none' }} >
         <animated.div onMouseOver={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} style={linkSpring} className="flex flex-row items-center">
-          <img src={icon} className="relative h-12" /> 
+          <img src={icon} className="relative h-12" style={{ webkitFilter: 'drop-shadow(1px 1px #dca30a)' }} /> 
           <div className="flex flex-col">
             <animated.div style={sidebarLinkSpring} >{label}</animated.div>
-            <animated.div style={underlineSpring} />
           </div>
         </animated.div>
       </Link>
@@ -69,8 +67,8 @@ const Header = ({ className, ...props }) => {
               </div>
               <div className="h-12 md:g-16 lg:h-24" />
               <div className="flex flex-col items-center justify-around"> 
-                <SidebarLink src="/" icon={honeyIcon} label="Za nas" menuIsHovered={isHovered} url={url}/>
-                <SidebarLink src="/services" icon={honeyIcon} label="Za tqh" menuIsHovered={isHovered} url={url} />
+                <SidebarLink src="/" icon={hiveIcon} label="За нас" menuIsHovered={isHovered} url={url}/>
+                <SidebarLink src="/services" icon={honeyIcon} label="Продукти" menuIsHovered={isHovered} url={url} />
                 <SidebarLink src="/contact" icon={contactIcon} label="Контакти" menuIsHovered={isHovered} url={url} />
               </div>
               <div className="h-12 md:g-16 lg:h-24" />
