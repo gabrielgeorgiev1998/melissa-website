@@ -30,7 +30,7 @@ const SidebarLink = ({src, icon, label, menuIsHovered, url}) => {
 
 
   return (
-      <Link to={src} className="bg-white rounded-lg h-12 mb-1 lobster" style={{ pointerEvents: menuIsHovered ? 'all' : 'none' }} >
+      <Link to={src} className="bg-white rounded-lg h-12 mb-1 comfortaa" style={{ pointerEvents: menuIsHovered ? 'all' : 'none' }} >
         <animated.div onMouseOver={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)} style={linkSpring} className="flex flex-row items-center ">
           <img src={icon} className="relative h-12" style={{ webkitFilter: 'drop-shadow(1px 1px #dca30a)' }} /> 
           <div className="flex flex-col">
