@@ -11,7 +11,7 @@ const SidebarLogo = ({isHovered}) => {
       <animated.div className="w-auto" style={logoSpinSpring}>
           <img src={logo} className="h-12 m-1" />
       </animated.div>
-      <div className="lato-light ">melissa</div>
+      {/*<div className="lato-light ">melissa</div>*/}
     </div>
   );
 };

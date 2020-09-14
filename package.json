@@ -1,8 +1,9 @@
 {
   "name": "@windedge/gatsby-tailwind-serif",
   "description": "Gatsby starter styled with Tailwind",
-  "version": "1.0",
+  "version": "1.0.0",
   "author": "@windedge",
+  "homepage": "http://gabrielgeorgiev1998.github.io/melissa-website",
   "dependencies": {
     "classnames": "^2.2.6",
     "gatsby": "2.21.21",
@@ -17,11 +18,13 @@
     "gatsby-source-filesystem": "^2.1.1",
     "gatsby-transformer-remark": "^2.5.0",
     "gatsby-transformer-sharp": "^2.2.0",
+    "gh-pages": "^3.1.0",
     "graphql": "15.0.0",
     "prop-types": "15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-helmet": "6.0.0",
+    "react-rellax": "^1.0.3",
     "react-spring": "^8.0.27"
   },
   "keywords": [
@@ -42,7 +45,8 @@
     "fix": "npm run fix:lint && npm run fix:prettier",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "devDependencies": {
     "babel-eslint": "10.0.2",

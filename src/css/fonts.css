@@ -45,3 +45,19 @@
 .comfortaa {
     font-family: comfortaa;
 }
+
+@font-face {
+    font-family: roboto;
+    src: url(../fonts/Roboto-Medium.ttf)
+}
+.roboto {
+    font-family: roboto;
+}
+
+@font-face {
+    font-family: manrope;
+    src: url(../fonts/Manrope-Medium.ttf)
+}
+.manrope {
+    font-family: manrope;
+}

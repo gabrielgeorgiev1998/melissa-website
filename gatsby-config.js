@@ -4,6 +4,7 @@ module.exports = {
     description: `Gatsby starter styled with Tailwind`,
     author: `@windedge`
   },
+  pathPrefix: "/melissa-website",
   plugins: [
     `gatsby-plugin-react-helmet`,
     {

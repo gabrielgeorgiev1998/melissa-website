@@ -12,7 +12,7 @@ const NameSection = (props) => {
                                     }, to:{
                                     opacity: 1,
                                     marginLeft: '1rem',
-                                    textShadow: '2px 2px #dca30a',
+                                    textShadow: '3px 3px #dca30a',
                                 }, config:config.slow});
 
     return (
