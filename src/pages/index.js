@@ -31,9 +31,10 @@ function Index() {
 
   const mousePos = useMousePosition();
 
-  const indexWhiteBoxSpring = useSpring({ marginBottom: `${4 + mousePos.y/150}rem`, marginRight: `${6 + mousePos.x/150}rem`});
-  const indexOrangeBoxSpring = useSpring({ marginBottom: `${3 + mousePos.y/150}rem`, marginRight: `${5 + mousePos.x/150}rem`});
-  const melissaIndexSpring = useSpring({ marginBottom: `${10 + mousePos.y/100}rem`, marginRight: `${15 + mousePos.x/100}rem`, textShadow: `4px 4px #dca30a`});
+  const indexWhiteBoxSpring = useSpring({ marginBottom: `${4 + mousePos.y/200}rem`, marginRight: `${6 + mousePos.x/200}rem`});
+  const indexOrangeBoxSpring = useSpring({ marginBottom: `${3 + mousePos.y/200}rem`, marginRight: `${5 + mousePos.x/200}rem`});
+  const melissaIndexSpring = useSpring({ marginBottom: `${10 + mousePos.y/120}rem`, marginRight: `${15 + mousePos.x/120}rem`, textShadow: `4px 4px #dca30a`});
+  const farmIndexSpring = useSpring({ marginBottom: `${14 + mousePos.y/160}rem`, marginRight: `${19 + mousePos.x/160}rem`, textShadow: `4px 4px #dca30a`});
 
   return (
     <Layout headerClass="bg-white"> 
@@ -46,15 +47,12 @@ function Index() {
           <div> 
             <animated.div className="absolute bottom-0 right-0 border-bee border-4 h-64 w-104 rounded-lg" style={indexOrangeBoxSpring} />
             <animated.div className="absolute bottom-0 right-0 border-white border-4 h-64 w-104 rounded-lg" style={indexWhiteBoxSpring} />
+            <animated.div className="absolute bottom-0 right-0 text-lg md:text-3xl text-white comfortaa" style={farmIndexSpring} >Пчелна ферма</animated.div>
             <animated.div className="absolute bottom-0 right-0 text-4xl md:text-5xl text-white comfortaa" style={melissaIndexSpring} >Мелисса Хъни</animated.div>
           </div>
         </div>
       </Parallax>
       <div className="relative h-104 bg-white z-20">
-        henlo
-      </div>
-      <div className="h-104">
-        henlo
       </div>
     </Layout>
   );
