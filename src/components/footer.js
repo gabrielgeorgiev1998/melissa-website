@@ -25,7 +25,7 @@ const Footer = ({ className, ...props }) => {
   return (
     <div className={className} {...props} onMouseEnter={() => setScrollIconHovered(true)} onMouseLeave={() => setScrollIconHovered(false)}> 
       <div style={{ backgroundImage: `url(${cellGradient})` }} className="relative w-full h-40 lg:h-56 bg-right bg-cover bg-fixed" >
-        <div className="absolute right-0 mr-2 comfortaa font-bold text-4xl md:text-5xl lg:text-6xl text-white" style={{ textShadow: '2px 2px #dca30a'}}>
+        <div className="absolute right-0 mr-2 comfortaa font-bold text-4xl md:text-5xl lg:text-6xl text-white" style={{ textShadow: '3px 3px #dca30a'}}>
           <Link>Мелисса Хъни</Link>
         </div>
         <div className="absolute right-0 flex flex-col mt-12 md:mt-16 lg:mt-20 mr-2 montserrat-reg items-end font-bold text-white" style={{ textShadow: '2px 2px #dca30a'}}>

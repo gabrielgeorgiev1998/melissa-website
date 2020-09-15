@@ -7,7 +7,7 @@ import SEO from './seo'
 import "../css/style.css";
 
 const Layout = ({ className, headerClass, bodyClass, children, ...props }) => {
-  bodyClass = bodyClass || "w-full z-10 pl-16";
+  bodyClass = bodyClass || "w-full z-10 pl-16 bg-white";
   return (
     <div className={className} {...props}>
       <SEO/>

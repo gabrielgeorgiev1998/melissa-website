@@ -47,7 +47,7 @@ const Header = ({ className, ...props }) => {
   const url = typeof window !== 'undefined' ? window.location.href : '';
 
   const sidebarSpring = useSpring({from: {width: '15rem'}, to: {width: `${isHovered ? 15 : 4}rem`}});
-  const closeButtonSpring = useSpring({transform: `rotate(${isHovered ? 0 : 180}deg)`});
+  const closeButtonSpring = useSpring({transform: `rotate(${isHovered ? 0 : -180}deg)`});
 
   return (
       <div className="fixed z-50">
